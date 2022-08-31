@@ -8,16 +8,6 @@ namespace Torneo.App.Consola
 
         static void Main(string[] args)
         {
-            AddMunicipio();
-        }
-
-        private static void AddMunicipio()
-        {
-            var municipio = new Municipio
-            {
-                Nombre = "Manizales",
-            };
-            _repoMunicipio.AddMunicipio(municipio);
         }
     }
 }
