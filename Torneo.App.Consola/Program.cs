@@ -18,6 +18,7 @@ namespace Torneo.App.Consola
                 Console.WriteLine("3. Insertar Equipo");
                 Console.WriteLine("4. Mostrar Municipios");
                 Console.WriteLine("5. Mostrar DTs");
+                Console.WriteLine("6. Mostrar Equipos");
                 Console.WriteLine("0 Salir");
                 Console.WriteLine("Seleccione la opción correcta");
                 opcion = Int32.Parse(Console.ReadLine());
@@ -37,6 +38,9 @@ namespace Torneo.App.Consola
                         break;
                     case 5:
                         GetAllDTs();
+                        break;
+                    case 6:
+                        GetAllEquipos();
                         break;
                 }
             } while (opcion != 0);
@@ -102,6 +106,15 @@ namespace Torneo.App.Consola
             }
         }
 
+        private static void GetAllEquipos()
+        {
+            foreach (var equipo in _repoEquipo.GetAllEquipos())
+            {
+                Console.WriteLine(equipo.Nombre + " "
+                + equipo.Municipio.Nombre + " " + equipo.DirectorTecnico.Nombre);
+
+            }
+        }
 
     }
 }
