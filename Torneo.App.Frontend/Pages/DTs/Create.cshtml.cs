@@ -22,8 +22,15 @@ namespace Torneo.App.Frontend.Pages.DTs
 
         public IActionResult OnPost(DirectorTecnico dt)
         {
-            _repoDT.AddDT(dt);
-            return RedirectToPage("Index");
+            if(ModelState.IsValid)
+            {
+                _repoDT.AddDT(dt);
+                return RedirectToPage("Index");
+            }
+            else
+            {
+                return Page();
+            }
         }
     }
 }
