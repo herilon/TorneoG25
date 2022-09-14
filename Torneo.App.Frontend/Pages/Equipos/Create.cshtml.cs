@@ -39,7 +39,9 @@ namespace Torneo.App.Frontend.Pages.Equipos
             }
             else
             {
-                return RedirectToPage("Create");
+                municipios = _repoMunicipio.GetAllMunicipios();
+                dts = _repoDT.GetAllDTs();
+                return Page();
             }
         }
     }
