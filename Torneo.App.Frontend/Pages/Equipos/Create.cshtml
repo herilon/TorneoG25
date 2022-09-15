@@ -16,6 +16,21 @@
             {
                 <option value="@municipio.Id">@municipio.Nombre</option>
             }
+
+            @* @foreach (var municipio in Model.municipios)
+            {
+                if (municipio.Id == 4)
+                {
+                    <option value="@municipio.Id" selected >@municipio.Nombre</option>
+                }
+                else
+                {
+                    <option value="@municipio.Id" >@municipio.Nombre</option>
+                }
+            } *@
+
+
+
         </select>
     </div>
     <div class="form-group">
