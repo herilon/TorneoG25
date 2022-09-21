@@ -59,5 +59,11 @@ namespace Torneo.App.Persistencia
             return equipos;
         }
 
+        public IEnumerable<Equipo> SearchEquipos(string nombre)
+        {
+            return _dataContext.Equipos
+                .Where(e => e.Nombre.Contains(nombre));
+        }
+
     }
 }
